@@ -23,7 +23,6 @@ public class ConfigurationReader {
 
 
         public  static String getProperty (String key){
-
             return  confiFile.getProperty(key);
         }
 

@@ -8,7 +8,7 @@ Feature: We are creating this feature file to add Orange HRM Scenarios
     Then The user wants to click
     And The user should be able to navigate dashboard
 
- @LoginWithParametrs @Any
+ @LoginWithParametrs @Any @ForFun
   Scenario: Login with credz
     Given The user want to orangeHRM application
     When The user wants to enter username as "Admin" and the password as "admin123"
@@ -30,6 +30,11 @@ Feature: We are creating this feature file to add Orange HRM Scenarios
     Then The user wants to save the information
     Then The user should be able to see "Personal Details"
 
+  @confiFileScenario
+  Scenario: Login
+    Given The user want to go to login
+    Then The user wants to click
+    And The user should be able to navigate dashboard
 
    #Parametrization
        # String
@@ -61,10 +66,64 @@ Feature: We are creating this feature file to add Orange HRM Scenarios
   #Added Cucumber and Gherkin Plugins
   #Cucumber and Selenium Dependency
        #Create Scenario
-  #Create Step Defination
+  #Create Step Definations
+  # Create config Propperties
+  #Configuration Reader
+  #Runner Class
+      #Runwith
+      #CucumberOptions
+              #Feature
+              #Glue
+              #Tags
 
-  @confiFileScenario
-  Scenario: Login
+  @Candidate
+Scenario:
     Given The user want to go to login
     Then The user wants to click
-    And The user should be able to navigate dashboard
+    Then The user wants to navigate recruitment
+    Then The user wants to see candidates
+    Then The user wants to add a candidate
+    Then The user wants to enter first name as "sanem" , last name as "korkmaz"
+    Then The user wants to enter email adress as"sanemk95@gmail.com"
+    Then The user wants to Consent to keep data
+    Then The user wants to save
+    Then The user wants to verify that the user is created
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

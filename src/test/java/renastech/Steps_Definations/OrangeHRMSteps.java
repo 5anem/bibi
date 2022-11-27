@@ -10,7 +10,7 @@ import renastech.utils.CommenUtils;
 import renastech.utils.ConfigurationReader;
 import renastech.utils.Driver;
 
-import javax.security.auth.login.Configuration;
+
 
 
 public class OrangeHRMSteps {
@@ -31,7 +31,7 @@ public class OrangeHRMSteps {
         WebElement username=Driver.getDriver().findElement(By.xpath("//input[@name='username']"));
         WebElement password=Driver.getDriver().findElement(By.xpath("//input[@name='password']"));
         username.sendKeys("Admin");
-        password.sendKeys("Mv@QUE0@dR3f@");
+        password.sendKeys("admin123");
         CommenUtils.hardWait(3000);
 
     }
@@ -55,12 +55,10 @@ public class OrangeHRMSteps {
 
     @Then("The user should be able to navigate dashboard")
     public void the_user_should_be_able_to_navigate_dashboard() {
-
-        System.out.println("The user should be able to see dashboard");
-        WebElement dashboard=Driver.getDriver().findElement(By.xpath("//h1[contains(text(),'Dashboard')]"));
-
         CommenUtils.hardWait(2000);
-        Assert.assertTrue(dashboard.isDisplayed());
+        System.out.println("The user should be able to see dashboard");
+        WebElement dashboard=Driver.getDriver().findElement(By.cssSelector("i[class='oxd-icon bi-clock-fill orangehrm-dashboard-widget-icon']~p"));
+        Assert.assertTrue("it is not displayed" ,dashboard.isDisplayed());
 
        // Driver.getDriver().close();
 
@@ -122,6 +120,7 @@ public class OrangeHRMSteps {
     @Then("The user should be able to see {string}")
     public void the_user_should_be_able_to_see(String headerText) {
 
+        CommenUtils.hardWait(10000);
         WebElement personalDetails=Driver.getDriver().findElement(By.xpath("//h6[.='Personal Details']"));
         Assert.assertEquals(personalDetails.getText(),headerText);
         CommenUtils.hardWait(3000);
@@ -136,11 +135,12 @@ public class OrangeHRMSteps {
 
         Driver.getDriver().get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 
+        CommenUtils.hardWait(4000);
         WebElement username=Driver.getDriver().findElement(By.xpath("//input[@name='username']"));
         WebElement password=Driver.getDriver().findElement(By.xpath("//input[@name='password']"));
 
-        username.sendKeys(ConfigurationReader.GetProperty("username"));
-        password.sendKeys(ConfigurationReader.GetProperty("password"));
+        username.sendKeys(ConfigurationReader.getProperty("username"));
+        password.sendKeys(ConfigurationReader.getProperty("password"));
 
 
 
@@ -150,6 +150,96 @@ public class OrangeHRMSteps {
     }
 
 
+    @When("The user wants to enter username as {string} and the password as {string}")
+    public void theUserWantsToEnterUsernameAsAndThePasswordAs(String username1, String pasword1) {
+        WebElement username=Driver.getDriver().findElement(By.xpath("//input[@name='username']"));
+        WebElement password=Driver.getDriver().findElement(By.xpath("//input[@name='password']"));
+
+        username.sendKeys(username1);
+        password.sendKeys(pasword1);
+
+    }
+
+    @Then("The user wants to navigate recruitment")
+    public void the_user_wants_to_navigate_recruitment() {
+        CommenUtils.hardWait(4000);
+      WebElement Recruitment=Driver.getDriver().findElement(By.cssSelector("//span[@class='oxd-text oxd-text--span oxd-main-menu-item--name']"));
+      //Recruitment.click();
+      CommenUtils.clickWithWait(Recruitment);
+    }
+    @Then("The user wants to see candidates")
+    public void the_user_wants_to_see_candidates() {
+        WebElement Candidates=Driver.getDriver().findElement(By.xpath("//a[@href='#']"));
+        Candidates.click();
+
+
+    }
+    @Then("The user wants to add a candidate")
+    public void the_user_wants_to_add_a_candidate() {
+      WebElement addbutton=Driver.getDriver().findElement(By.xpath("//button[@class='oxd-button oxd-button--medium oxd-button--secondary']"));
+      addbutton.click();
+    }
+    @Then("The user wants to enter first name as {string} , last name as\"korkmaz\"")
+    public void the_user_wants_to_enter_first_name_as_last_name_as_korkmaz(String sanem , String korkmaz) {
+        WebElement firstnaem=Driver.getDriver().findElement(By.xpath("//input[@class='oxd-input oxd-input--active']"));
+        WebElement lastname=Driver.getDriver().findElement(By.xpath("" ));
+
+    }
+    @Then("The user wants to enter email adress as\"sanemk95@gmail.com\"")
+    public void the_user_wants_to_enter_email_adress_as_sanemk95_gmail_com() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+    @Then("The user wants to Consent to keep data")
+    public void the_user_wants_to_consent_to_keep_data() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+    @Then("The user wants to save")
+    public void the_user_wants_to_save() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+    @Then("The user wants to verify that the user is created")
+    public void the_user_wants_to_verify_that_the_user_is_created() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }
+
