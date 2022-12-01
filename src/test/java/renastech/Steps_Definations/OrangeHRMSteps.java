@@ -181,8 +181,8 @@ public class OrangeHRMSteps {
     }
     @Then("The user wants to enter first name as {string} , last name as\"korkmaz\"")
     public void the_user_wants_to_enter_first_name_as_last_name_as_korkmaz(String sanem , String korkmaz) {
-        WebElement firstnaem=Driver.getDriver().findElement(By.xpath("//input[@class='oxd-input oxd-input--active']"));
-        WebElement lastname=Driver.getDriver().findElement(By.xpath("" ));
+        WebElement firstname=Driver.getDriver().findElement(By.xpath("//input[@class='oxd-input oxd-input--active']"));
+        WebElement lastname=Driver.getDriver().findElement(By.xpath(" "));
 
     }
     @Then("The user wants to enter email adress as\"sanemk95@gmail.com\"")
