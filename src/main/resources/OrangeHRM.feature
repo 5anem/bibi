@@ -1,11 +1,13 @@
 Feature: We are creating this feature file to add Orange HRM Scenarios
 
 
+
+
  @LoginWithoutParametrs @Any
   Scenario: Login to Orange HRM
     Given The user want to orangeHRM application
     When The user want to enter username and password
-    Then The user wants to click
+    Then The user wants to click login
     And The user should be able to navigate dashboard
 
  @LoginWithParametrs @Any @ForFun
@@ -28,7 +30,56 @@ Feature: We are creating this feature file to add Orange HRM Scenarios
     Then The user wants to add user name as "TOM"
     Then The user wants to add last name as "JERRY"
     Then The user wants to save the information
+    Then The user should be able to see "Personal Details"`
+
+
+  #Data Tables
+  @Maping
+  Scenario:
+    Given The user want to orangeHRM application
+    When The user wants to login HRM
+    |Username|Admin|
+    |Password|admin123|
+    Then The user wants to click login
+    Then The user should be able to navigate dashboard
+    Then The user wants to go to PIM
+    Then The user wants to see add employe page
+    Then The user wants to see add employee
+    |FirstName|Tom123|
+    |LastName |Jerry123|
+    Then The user wants to save the information
     Then The user should be able to see "Personal Details"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   @confiFileScenario
   Scenario: Login
@@ -47,7 +98,7 @@ Feature: We are creating this feature file to add Orange HRM Scenarios
 
     #Gherkin language keyword , it is case sensetive
 
-    #Framework    //JAVA -- Maven --> Selenium -- Cucumber -- POM
+    #Framework    //JAVA -- Maven -->z Selenium -- Cucumber -- POM
 
 
 
@@ -83,11 +134,12 @@ Scenario:
     Then The user wants to navigate recruitment
     Then The user wants to see candidates
     Then The user wants to add a candidate
-    Then The user wants to enter first name as "sanem" , last name as "korkmaz"
+    Then The user wants to enter first name as "sanem", last name as "korkmaz"
     Then The user wants to enter email adress as"sanemk95@gmail.com"
     Then The user wants to Consent to keep data
     Then The user wants to save
     Then The user wants to verify that the user is created
+
 
 
 
