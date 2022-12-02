@@ -12,6 +12,7 @@ Feature: We are creating this feature file to add Orange HRM Scenarios
 
  @LoginWithParametrs @Any @ForFun
   Scenario: Login with credz
+
     Given The user want to orangeHRM application
     When The user wants to enter username as "Admin" and the password as "admin123"
     Then The user wants to click
