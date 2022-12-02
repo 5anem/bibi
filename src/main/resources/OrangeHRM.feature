@@ -15,7 +15,7 @@ Feature: We are creating this feature file to add Orange HRM Scenarios
 
     Given The user want to orangeHRM application
     When The user wants to enter username as "Admin" and the password as "admin123"
-    Then The user wants to click
+    Then The user wants to click login
     And The user should be able to navigate dashboard
     And The user id number should be 1568
     And The user id should be 1568,5
@@ -24,14 +24,14 @@ Feature: We are creating this feature file to add Orange HRM Scenarios
    Scenario:
     Given The user want to orangeHRM application
     When The user wants to enter username as "Admin" and the password as "admin123"
-    Then The user wants to click
+    Then The user wants to click login
     And The user should be able to navigate dashboard
     Then The user wants to go to PIM
     Then The user wants to see add employe page
     Then The user wants to add user name as "TOM"
     Then The user wants to add last name as "JERRY"
     Then The user wants to save the information
-    Then The user should be able to see "Personal Details"`
+    Then The user should be able to see "Personal Details"
 
 
   #Data Tables
@@ -51,6 +51,25 @@ Feature: We are creating this feature file to add Orange HRM Scenarios
     Then The user wants to save the information
     Then The user should be able to see "Personal Details"
 
+ @Mapping_TC2
+  Scenario:Verify that add new employee with login credentials
+    Given The user want to orangeHRM application
+    When The user wants to login HRM
+      |Username|Admin|
+      |Password|admin123|
+    Then The user wants to click login
+    Then The user should be able to navigate dashboard
+    Then The user wants to go to PIM
+    Then The user wants to see add employe page
+    Then The user wants to see add employee
+      |FirstName|Tom123123|
+      |LastName |Jerry123123|
+ Then The user wants to add the login details
+      |User Name | sanems|
+      |Password  |sanem123|
+      |Status    |Disable|
+    Then The user wants to save the information
+    Then The user should be able to see "Personal Details"
 
 
 

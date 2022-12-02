@@ -117,6 +117,7 @@ public class OrangeHRMSteps {
     @Then("The user wants to save the information")
     public void the_user_wants_to_save_the_information() {
 
+        CommenUtils.hardWait(1000);
         WebElement save = Driver.getDriver().findElement(By.xpath("//button[@class='oxd-button oxd-button--medium oxd-button--secondary orangehrm-left-space']"));
         save.click();
         CommenUtils.hardWait(3000);
@@ -126,9 +127,9 @@ public class OrangeHRMSteps {
 
     @Then("The user should be able to see {string}")
     public void the_user_should_be_able_to_see(String headerText) {
-        WebElement personalDetails = Driver.getDriver().findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div/div/div[1]/div[2]/div[1]/a"));
 
-        CommenUtils.hardWait(4000);
+        CommenUtils.hardWait(1000);
+        WebElement personalDetails = Driver.getDriver().findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div/div/div[1]/div[2]/div[1]/a"));
         Assert.assertTrue(personalDetails.isDisplayed());
         CommenUtils.hardWait(3000);
         Driver.getDriver().close();
@@ -224,6 +225,7 @@ public class OrangeHRMSteps {
         username.sendKeys(dataTable.get("Username"));
         password.sendKeys(dataTable.get("Password"));
 
+
     }
 
 
@@ -242,8 +244,51 @@ public class OrangeHRMSteps {
         lastName.sendKeys(dataTable.get("LastName"));
 
 
+    }
+
+    @Then("The user wants to add the login details")
+    public void the_user_wants_to_add_the_login_details(Map<String, String> dataTable) {
+        WebElement switchbox  =Driver.getDriver().findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div/form/div[1]/div[2]/div[2]/div/label/span"));
+
+        CommenUtils.hardWait(2000);
+        WebElement UserName =Driver.getDriver().findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div/form/div[1]/div[2]/div[3]/div/div[1]/div/div[2]/input"));
+        WebElement password =Driver.getDriver().findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div/form/div[1]/div[2]/div[4]/div/div[1]/div/div[2]/input"));
+        WebElement rePassword =Driver.getDriver().findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div/form/div[1]/div[2]/div[4]/div/div[2]/div/div[2]/input"));
+        WebElement status =Driver.getDriver().findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div/form/div[1]/div[2]/div[3]/div/div[2]/div/div[2]/div[2]/div[2]/div/label"));
+
+        switchbox.isDisplayed();
+        UserName.sendKeys(dataTable.get("User Name"));
+        password.sendKeys(dataTable.get("Password"));
+        rePassword.sendKeys(dataTable.get("Password"));
+
+        CommenUtils.selectFromDropDown(status,dataTable.get("Status"));
+
+
 
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }

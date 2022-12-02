@@ -15,8 +15,8 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/main/resources",
         glue = "renastech/Steps_Definations", //glue is step defination in java cucumber language
-        tags = "@Maping",
-        dryRun= false          //it will check if there is undifianed steps definations
+        tags = " @Mapping_TC2",
+        dryRun= false                          //it will check if there is undifianed steps definations
 )
 public class TestRunner {
 
